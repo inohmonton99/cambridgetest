@@ -1,0 +1,12 @@
+{
+    "annotations": {
+      "list": []
+    },
+    "panels": [],
+    "schemaVersion": 16,
+    "tags": ["node-exporter"],
+    "title": "Node Exporter Dashboard",
+    "uid": "node-exporter",
+    "version": 1
+  }
+  
