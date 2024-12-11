@@ -50,6 +50,6 @@ jobs:
 
       - name: Start up Grafana and Prometheus
         run: |
-          docker-compose -f ./docker/docker-compose.yml up -d
+          docker compose -f ./docker/docker-compose.yml up -d
         env:
           DOCKER_CLI_EXPERIMENTAL: "enabled"
