@@ -92,7 +92,6 @@ resource "aws_db_instance" "main" {
   engine               = "mysql"
   engine_version       = "8.0"
   instance_class       = "db.t2.micro"
-  name                 = "mydb"
   username             = "admin"
   password             = "password"
   db_subnet_group_name = aws_db_subnet_group.main.name
@@ -122,6 +121,7 @@ resource "aws_cloudfront_distribution" "main" {
       http_port              = 80
       https_port             = 443
       origin_protocol_policy = "http-only"
+      origin_ssl_protocols   = "SSLv3"
     }
   }
 
