@@ -25,20 +25,18 @@ jobs:
     
       - name: Terraform Init
         run: terraform init
+        working-directory: ./terraform
 
       - name: Terraform Validate
         run: terraform validate
+        working-directory: ./terraform
 
       - name: Terraform Plan
         id: plan
         run: terraform plan -out=tfplan
-        env:
-          TF_VAR_aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          TF_VAR_aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        working-directory: ./terraform
 
       - name: Terraform Apply
         if: success()
         run: terraform apply -auto-approve tfplan
-        env:
-          TF_VAR_aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          TF_VAR_aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        working-directory: ./terraform
